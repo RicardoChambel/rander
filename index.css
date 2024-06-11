@@ -1,0 +1,158 @@
+*{
+    font-family: 'Fira Code', sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+    font-weight: 400;
+    color: var(--textColor);
+    text-decoration: none;
+    transition: .5s;
+    scroll-behavior: smooth;
+}
+
+:root{
+    --textColor:#f3f5f7;
+    --bodyBg:linear-gradient(120deg, rgba(0,91,98,1) 0%, #05090a 50%);
+    --bgColor1:#05090a;
+    --bgColorAccent:#060c0fb0;
+    --bgColorAccent2:rgb(12, 19, 21);
+    --borderColor1: rgb(80, 81, 97);
+    --primaryColor:#4389ad;
+    --secondaryColor: #225b77;
+    --accentColor:#2b96cf;
+}
+@keyframes body {
+    from{
+        opacity: 0;
+    }
+}
+body{
+    width: 100%;
+    height:100vh;
+    background: var(--bodyBg);
+    color: var(--textColor);
+    animation: body 1.5s;
+}
+
+hr{
+    color: var(--borderColor1);
+}
+
+/* Header -------------------------------------------*/
+ @keyframes header {
+    from{
+        left: 35%;
+        width: 30%;
+    }
+ }
+header{
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 70%;
+    left: 15%;
+    top: 3%;
+    padding: 2%;
+    background-color: var(--bgColorAccent);
+    border-radius: 16px;
+    border: 1px solid var(--borderColor1);
+    animation: header 1s;
+}
+header #pageTitle{
+    cursor: pointer;
+}
+header #pageTitle:hover{
+    color: var(--primaryColor);
+    rotate: -5deg;
+}
+header #pageTitle > span{
+    color: var(--primaryColor);
+}
+header div{
+    background: var(--bgColor1);
+    padding: .5vw 2vw;
+    display: flex;
+    justify-content: center;
+    gap: 7%;
+    border-radius: 8px;
+    border: 1px solid var(--borderColor1);
+    text-wrap: nowrap;
+}
+
+header div a{
+    font-size: 25px;
+    
+    background: linear-gradient(var(--secondaryColor), var(--secondaryColor));
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    background-size: 0 2px;
+}
+header a:hover{
+    background-size: 100% 2px;
+}
+/* Container -------------------------------------------*/
+.container{
+    width: 70%;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.container button{
+    color: white;
+    background: var(--primaryColor);
+    border-radius: 8px;
+    border: none;
+    padding: 1.5% 2%;
+    font-size: 20px;
+}
+.container button:hover{
+    box-shadow: 0px 0px 10px 0px var(--accentColor);
+    cursor: pointer;
+}
+.container button:active{
+    scale: .7;
+}
+
+.container-div{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    width: 50vh;
+    padding: 3vh 1vh;
+    margin: 0vh 1vh;
+
+    border-radius: 10px;
+    background-color: var(--bgColorAccent);
+    border: 1PX SOLID var(--borderColor1);
+}
+.container-div:hover{
+    transform: translateY(-5%);
+    box-shadow: 0px 10px 20px 0px black;
+    border-radius: 30px;
+}
+.container-div-content-separator{
+    background: linear-gradient(var(--secondaryColor), var(--secondaryColor));
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 0px;
+    height: 1vh;
+    width: 50%;
+    align-self: center;
+    border: none;
+    border-bottom: 1px solid white;
+}
+.container-div:hover > .container-div-content-separator{
+    background-size: 100% 100%;
+}
+.container-div-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
+    margin: 2vh;
+} 
